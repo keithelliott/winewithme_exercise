@@ -40,6 +40,7 @@
 		CD30E76616CEE50A006612F7 /* SplashScreen320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = CD30E76116CEE50A006612F7 /* SplashScreen320x480.png */; };
 		CD30E76716CEE50A006612F7 /* SplashScreen640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = CD30E76216CEE50A006612F7 /* SplashScreen640x960.png */; };
 		CD30E76816CEE50A006612F7 /* SplashScreen640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = CD30E76316CEE50A006612F7 /* SplashScreen640x1136.png */; };
+		CD97D88B16E04417003D95AD /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97D88A16E04417003D95AD /* Wine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		CD30E76116CEE50A006612F7 /* SplashScreen320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen320x480.png; sourceTree = "<group>"; };
 		CD30E76216CEE50A006612F7 /* SplashScreen640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen640x960.png; sourceTree = "<group>"; };
 		CD30E76316CEE50A006612F7 /* SplashScreen640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen640x1136.png; sourceTree = "<group>"; };
+		CD97D88916E04417003D95AD /* Wine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wine.h; sourceTree = "<group>"; };
+		CD97D88A16E04417003D95AD /* Wine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 				CD30E73C16CEDAC9006612F7 /* DetailViewController.m */,
 				CD30E73516CEDAC9006612F7 /* TestWine.xcdatamodeld */,
 				CD30E72116CEDAC9006612F7 /* Supporting Files */,
+				CD97D88916E04417003D95AD /* Wine.h */,
+				CD97D88A16E04417003D95AD /* Wine.m */,
 			);
 			path = TestWine;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				CD30E73716CEDAC9006612F7 /* TestWine.xcdatamodeld in Sources */,
 				CD30E73A16CEDAC9006612F7 /* MasterViewController.m in Sources */,
 				CD30E73D16CEDAC9006612F7 /* DetailViewController.m in Sources */,
+				CD97D88B16E04417003D95AD /* Wine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +394,7 @@
 				CD30E74216CEDAC9006612F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
