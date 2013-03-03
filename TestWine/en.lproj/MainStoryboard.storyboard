@@ -53,6 +53,9 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="21" kind="push" identifier="showDetail" id="Q38-NI-TDs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -73,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Rating Table View Controller-->
         <scene sceneID="lGY-21-t9W">
             <objects>
-                <tableViewController id="FC9-vz-TrD" sceneMemberID="viewController">
+                <tableViewController id="FC9-vz-TrD" customClass="AddRatingTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="99B-Kg-Qp8">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,12 +102,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-Hj-uf7">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3300" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-Hj-uf7">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="186" id="Wa1-DW-j7U"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="FC9-vz-TrD" id="74w-vr-pyj"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -131,7 +137,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-a5-46V">
+                                                <button opaque="NO" tag="59000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-a5-46V">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="JSZ-76-k1t"/>
                                                         <constraint firstAttribute="width" constant="167" id="h0M-jL-mBx"/>
@@ -144,6 +150,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="regionPressed:" destination="FC9-vz-TrD" eventType="touchUpInside" id="Uku-ZS-kKe"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -171,7 +180,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAB-B6-fwz">
+                                                <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAB-B6-fwz">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Dsb-l9-FTz"/>
                                                         <constraint firstAttribute="width" constant="161" id="v7V-cR-Sk4"/>
@@ -184,6 +193,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="typeChanged:" destination="FC9-vz-TrD" eventType="touchUpInside" id="3MO-1Z-QJk"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -216,13 +228,16 @@
                                                         <constraint firstAttribute="width" constant="166" id="00S-bs-RbV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal" title="Year">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="yearPressed:" destination="FC9-vz-TrD" eventType="touchUpInside" id="rKo-rF-YGn"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -234,7 +249,7 @@
                                             <constraint firstItem="aGV-uV-8sn" firstAttribute="top" secondItem="c5M-1W-pdH" secondAttribute="top" constant="4" id="zOC-2d-fW9"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="ETH-b2-9H0">
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="ETH-b2-9H0">
                                         <rect key="frame" x="0.0" y="214" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -249,27 +264,30 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3O-K7-InI">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3O-K7-InI">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="161" id="rdj-pk-Dgi"/>
+                                                        <constraint firstAttribute="height" constant="45" id="xV3-2V-gnK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" image="ratings_1.png">
+                                                    <state key="normal" backgroundImage="ratings_1.png">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="ratingChanged:" destination="FC9-vz-TrD" eventType="touchUpInside" id="i2f-v8-K1L"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="3cK-uj-NOK" firstAttribute="leading" secondItem="ETH-b2-9H0" secondAttribute="leading" constant="30" id="MjF-YN-YTc"/>
-                                            <constraint firstItem="o3O-K7-InI" firstAttribute="leading" secondItem="ETH-b2-9H0" secondAttribute="leading" constant="124" id="UG3-Az-qOd"/>
+                                            <constraint firstAttribute="trailing" secondItem="o3O-K7-InI" secondAttribute="trailing" constant="35" id="P4B-p0-lE7"/>
                                             <constraint firstItem="3cK-uj-NOK" firstAttribute="top" secondItem="ETH-b2-9H0" secondAttribute="top" constant="20" type="default" id="bnd-K9-c1s"/>
-                                            <constraint firstItem="o3O-K7-InI" firstAttribute="top" secondItem="ETH-b2-9H0" secondAttribute="top" constant="10" id="xjD-ze-8mv"/>
+                                            <constraint firstItem="o3O-K7-InI" firstAttribute="top" secondItem="ETH-b2-9H0" secondAttribute="top" constant="9" id="jzu-FU-K9T"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -281,8 +299,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="11y-gE-13U">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TZw-9U-yfl"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TZw-9U-yfl">
+                            <connections>
+                                <action selector="addRating:" destination="FC9-vz-TrD" id="mJr-7B-0fk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="name" destination="6oK-Hj-uf7" id="iTA-il-phB"/>
+                        <outlet property="ratingsBtn" destination="o3O-K7-InI" id="Ueh-U0-dBQ"/>
+                        <outlet property="regionBtn" destination="bKa-a5-46V" id="6sO-Wx-DZ3"/>
+                        <outlet property="typeBtn" destination="bAB-B6-fwz" id="IOg-pP-1TJ"/>
+                        <outlet property="yearBtn" destination="aGV-uV-8sn" id="B3N-A0-gNb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="js6-pX-46g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -293,7 +322,7 @@
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon114x114-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="McY-bV-VKZ"/>
@@ -396,6 +425,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
+                    <connections>
+                        <outlet property="wineBottle" destination="XIE-CL-Y39" id="r7Z-be-96O"/>
+                        <outlet property="wineCountry" destination="o1o-gF-dV6" id="O6F-Bk-fSR"/>
+                        <outlet property="wineName" destination="pGd-nc-SPU" id="U12-pq-Aci"/>
+                        <outlet property="wineRating" destination="Mz1-Kp-JeQ" id="AmI-n0-158"/>
+                        <outlet property="wineRegion" destination="WPY-aZ-kSE" id="9v0-R8-JT1"/>
+                        <outlet property="wineYear" destination="g4E-v9-b9s" id="LBC-eq-s4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,6 +445,40 @@
         <image name="RedWine.png" width="120" height="200"/>
         <image name="ratings_1.png" width="96" height="44"/>
     </resources>
+    <classes>
+        <class className="AddRatingTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddRatingTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addRating:"/>
+                <relationship kind="action" name="ratingChanged:"/>
+                <relationship kind="action" name="regionPressed:"/>
+                <relationship kind="action" name="typeChanged:"/>
+                <relationship kind="action" name="yearPressed:"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ratingsBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="regionBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="typeBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="yearBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="wineBottle" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wineCountry" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wineName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wineRating" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wineRegion" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wineYear" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

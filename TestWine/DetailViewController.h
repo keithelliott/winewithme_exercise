@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class Wine;
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Wine* wine;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *wineName;
+@property (strong, nonatomic) IBOutlet UILabel *wineRegion;
+@property (strong, nonatomic) IBOutlet UILabel *wineCountry;
+@property (strong, nonatomic) IBOutlet UILabel *wineYear;
+
+
+@property (strong, nonatomic) IBOutlet UIImageView *wineRating;
+@property (strong, nonatomic) IBOutlet UIImageView *wineBottle;
 @end

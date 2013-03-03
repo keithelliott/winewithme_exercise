@@ -19,16 +19,15 @@ typedef enum ChooserUIEnum{
 } ChooserUIType;
 
 @interface ChooserViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
-@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
-- (IBAction)donePressed:(id)sender;
 @property (nonatomic) ChooserUIType pickerType;
 @property (strong, nonatomic) WineUtils *wineUtils;
-@property (weak, nonatomic) NSString *selectedValue;
+@property (copy, nonatomic) NSString *selectedValue;
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navItem;
 
+- (IBAction)donePressed:(id)sender;
 - (id)initWithPickerType:(ChooserUIType)pickerType;
-
 + (id)objectWithPickerType:(ChooserUIType)pickerType;
 
 @end

@@ -41,6 +41,10 @@
 		CD30E76716CEE50A006612F7 /* SplashScreen640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = CD30E76216CEE50A006612F7 /* SplashScreen640x960.png */; };
 		CD30E76816CEE50A006612F7 /* SplashScreen640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = CD30E76316CEE50A006612F7 /* SplashScreen640x1136.png */; };
 		CD97D88B16E04417003D95AD /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97D88A16E04417003D95AD /* Wine.m */; };
+		CD97D89C16E05693003D95AD /* AddRatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97D89816E05693003D95AD /* AddRatingTableViewController.m */; };
+		CD97D89D16E05693003D95AD /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97D89A16E05693003D95AD /* ChooserViewController.m */; };
+		CD97D89E16E05693003D95AD /* ChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD97D89B16E05693003D95AD /* ChooserViewController.xib */; };
+		CD97D8A116E056CA003D95AD /* WineUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97D8A016E056CA003D95AD /* WineUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,13 @@
 		CD30E76316CEE50A006612F7 /* SplashScreen640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen640x1136.png; sourceTree = "<group>"; };
 		CD97D88916E04417003D95AD /* Wine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wine.h; sourceTree = "<group>"; };
 		CD97D88A16E04417003D95AD /* Wine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wine.m; sourceTree = "<group>"; };
+		CD97D89716E05693003D95AD /* AddRatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRatingTableViewController.h; sourceTree = "<group>"; };
+		CD97D89816E05693003D95AD /* AddRatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRatingTableViewController.m; sourceTree = "<group>"; };
+		CD97D89916E05693003D95AD /* ChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserViewController.h; sourceTree = "<group>"; };
+		CD97D89A16E05693003D95AD /* ChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserViewController.m; sourceTree = "<group>"; };
+		CD97D89B16E05693003D95AD /* ChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooserViewController.xib; sourceTree = "<group>"; };
+		CD97D89F16E056CA003D95AD /* WineUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineUtils.h; sourceTree = "<group>"; };
+		CD97D8A016E056CA003D95AD /* WineUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +146,13 @@
 			children = (
 				CD30E72916CEDAC9006612F7 /* AppDelegate.h */,
 				CD30E72A16CEDAC9006612F7 /* AppDelegate.m */,
+				CD97D89716E05693003D95AD /* AddRatingTableViewController.h */,
+				CD97D89816E05693003D95AD /* AddRatingTableViewController.m */,
+				CD97D89916E05693003D95AD /* ChooserViewController.h */,
+				CD97D89A16E05693003D95AD /* ChooserViewController.m */,
+				CD97D89B16E05693003D95AD /* ChooserViewController.xib */,
+				CD97D89F16E056CA003D95AD /* WineUtils.h */,
+				CD97D8A016E056CA003D95AD /* WineUtils.m */,
 				CD30E73216CEDAC9006612F7 /* MainStoryboard.storyboard */,
 				CD30E73816CEDAC9006612F7 /* MasterViewController.h */,
 				CD30E73916CEDAC9006612F7 /* MasterViewController.m */,
@@ -256,6 +274,7 @@
 				CD30E76616CEE50A006612F7 /* SplashScreen320x480.png in Resources */,
 				CD30E76716CEE50A006612F7 /* SplashScreen640x960.png in Resources */,
 				CD30E76816CEE50A006612F7 /* SplashScreen640x1136.png in Resources */,
+				CD97D89E16E05693003D95AD /* ChooserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +291,9 @@
 				CD30E73A16CEDAC9006612F7 /* MasterViewController.m in Sources */,
 				CD30E73D16CEDAC9006612F7 /* DetailViewController.m in Sources */,
 				CD97D88B16E04417003D95AD /* Wine.m in Sources */,
+				CD97D89C16E05693003D95AD /* AddRatingTableViewController.m in Sources */,
+				CD97D89D16E05693003D95AD /* ChooserViewController.m in Sources */,
+				CD97D8A116E056CA003D95AD /* WineUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

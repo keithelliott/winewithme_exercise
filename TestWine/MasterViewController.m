@@ -7,7 +7,7 @@
 //
 
 #import "MasterViewController.h"
-
+#import "Wine.h"
 #import "DetailViewController.h"
 
 @interface MasterViewController ()
@@ -25,10 +25,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-	self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,25 +34,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
 
 #pragma mark - Table View
 
@@ -109,8 +87,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        Wine *wine = (Wine *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setWine:wine];
     }
 }
 
@@ -215,8 +193,12 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"name"] description];
+    Wine *wine = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	cell.textLabel.text = wine.name;
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@  Rating:(%@/5)", wine.region, wine.rating];
+	if([wine.type isEqualToString:@"Red"])
+		cell.imageView.image = [UIImage imageNamed:@"RedWine-small.png"];
+	else cell.imageView.image = [UIImage imageNamed:([wine.type isEqualToString:@"White"]) ? @"WhiteWine-small.png" : @"RoseWine-small.png"];
 }
 
 @end
